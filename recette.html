@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
     <title>Ifresh</title>
 </head>
 <body>
@@ -25,57 +26,43 @@
         <h1 id="p2">La Recette de votre Semaine </h1>
 
         <div id="carte">
-             <div id="day"><p>Nom du plat</p></div>
-             <div id="img2"><img src="" alt=""></div>
-        <div id="recette">
-            <div id="ing"><h2>Ingrédients</h2></div>
-            <div id="etp"><h2>Etapes</h2></div>
-        </div>
-        </div>
-
-        <div id="carte">
-            <div id="day"><p>Nom du plat</p></div>
-            <div id="img2"><img src="" alt=""></div>
+            <div id="day"><p></p></div>
+            <div id="imgcarte"><img src="" alt=""></div>
             <div id="recette">
-                <div id="ing"><h2>Ingrédients</h2></div>
-                <div id="etp"><h2>Etapes</h2></div>
+                <div id="etp"><h2>Etapes</h2><p></p></div>
             </div>
             </div>
         
          <div id="carte">
-             <div id="day"><p>Nom du plat</p></div>
-             <div id="img2"><img src="" alt=""></div>
+             <div id="day1"><p></p></div>
+             <div id="img1"><img src="" alt=""></div>
              <div id="recette">
-                 <div id="ing"><h2>Ingrédients</h2></div>
-                <div id="etp"><h2>Etapes</h2></div>
+                <div id="etp1"><h2>Etapes</h2><p></p></div>
             </div>
             </div>    
     
 
-    <div id="carte">
-        <div id="day"><p>Nom du plat</p></div>
-        <div id="img2"><img src="" alt=""></div>
-   <div id="recette">
-       <div id="ing"><h2>Ingrédients</h2></div>
-       <div id="etp"><h2>Etapes</h2></div>
-   </div>
-   </div>
+         <div id="carte">
+            <div id="day2"><p></p></div>
+            <div id="img2"><img src="" alt=""></div>
+         <div id="recette">
+           <div id="etp2"><h2>Etapes</h2><p></p></div>
+         </div>
+         </div>
 
    <div id="carte">
-       <div id="day"><p>Nom du plat</p></div>
-       <div id="img2"><img src="" alt=""></div>
+       <div id="day3"><p></p></div>
+       <div id="img3"><img src="" alt=""></div>
        <div id="recette">
-           <div id="ing"><h2>Ingrédients</h2></div>
-           <div id="etp"><h2>Etapes</h2></div>
+           <div id="etp3"><h2>Etapes</h2><p></p></div>
        </div>
        </div>
    
     <div id="carte">
-        <div id="day"><p>Nom du plat</p></div>
-        <div id="img2"><img src="" alt=""></div>
+        <div id="day4"><p></p></div>
+        <div id="img3"><img src="" alt=""><p></p></div>
         <div id="recette">
-            <div id="ing"><h2>Ingrédients</h2></div>
-           <div id="etp"><h2>Etapes</h2></div>
+           <div id="etp4"><h2>Etapes</h2><p></p></div>
        </div>
        </div>    
 </div>
@@ -90,3 +77,10 @@
 </footer>
 </body>
 </html>
+
+fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+.then(x => x.json())
+.then (y => {
+ let div1 = document.querySelector("#img")
+ div1.innerHTML =`<img src="${y.meals[0].strMealThumb}"> `
+})
